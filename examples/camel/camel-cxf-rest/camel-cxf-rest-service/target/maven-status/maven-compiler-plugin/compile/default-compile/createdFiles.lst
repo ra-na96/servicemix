@@ -1,0 +1,3 @@
+org\apache\servicemix\examples\camel\rest\ServiceHandler.class
+org\apache\servicemix\examples\camel\rest\model\HelpRequest.class
+org\apache\servicemix\examples\camel\rest\model\Person.class
