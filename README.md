@@ -11,8 +11,7 @@
 
 3. Add Feature Repo in service mix console
 ```
-    feature:repo-add file:/C:/Users/{userName}/.m2/repository/org/apache/servicemix/examples/features-file/1.0.0/features-file-1.0.
-    0-features.xml
+feature:repo-add file:/C:/Users/{userName}/.m2/repository/org/apache/servicemix/examples/features-file/1.0.0/features-file-1.0.0-features.xml
 ```
 
 4. install the feature 
