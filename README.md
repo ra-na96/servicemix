@@ -1,12 +1,46 @@
-# servicemix
+## To Run Project 
 
-These are examples from the service mix library but with some changes in camel-cxf-rest.
-Each project has the README file for the steps to install the bundle and start the project.
-Here are some problems I faced trying to modify and run the project.
+1. Install Project
+```
+    mvn clean install
+```
+2. Run Service mix service 
+```
+{servicemixDir}/bin/servicemix
+```
+
+3. Add Feature Repo in service mix console
+```
+    feature:repo-add file:/C:/Users/{userName}/.m2/repository/org/apache/servicemix/examples/features-file/1.0.0/features-file-1.0.
+    0-features.xml
+```
+
+4. install the feature 
+
+```
+feature:install camel-cxf-mq-feature
+```
 
 
-1 - To use a DTO as a message for activemq we need to add it in a trusted package or else it will throw an exception and won't be able to marshall\unmarshall it, to add activemq trusted package go to <SEERVICEMIX_HOME>/etc/system.properties file and add 
+Useful commands
 
-    org.apache.activemq.SERIALIZABLE_PACKAGES=*
+- To check the feature is exist 
 
-2 - To start the postgres sql module, add postgresql-42.6.0.jar in <SEERVICEMIX_HOME>/lib/ext for the module to find sql driver
+```
+feature:list | grep camel-cxf-mq-feature
+```
+
+- To uninstall feature
+
+```
+feature:install camel-cxf-mq-feature
+```
+
+
+## Debugging application 
+
+Debug activated by using the `debug` parameter on the command line.
+
+```
+servicemix.bat debug
+```
