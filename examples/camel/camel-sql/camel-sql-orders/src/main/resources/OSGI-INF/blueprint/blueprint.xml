@@ -38,11 +38,8 @@
         <propertyPlaceholder id="placeholder" location="classpath:sql.properties"/>
         <route id="generateOrder-route">
             <from uri="direct-vm:insertOrder"/>
-            <transform>
-                <method ref="orderBean" method="generateRandomOrder"/>
-            </transform>
             <to uri="sql:{{sql.insertOrder}}"/>
-            <log message="Inserted a new order of ${body[item]}"/>
+            <log message="Inserted a new order of ${body}"/>
         </route>
 
         <!-- route that process the orders by picking up new rows from the database
@@ -53,8 +50,5 @@
             <log message="${body}"/>
         </route>
     </camelContext>
-
-
-
 
 </blueprint>

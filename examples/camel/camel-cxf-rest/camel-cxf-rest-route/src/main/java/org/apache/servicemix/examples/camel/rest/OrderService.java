@@ -17,8 +17,7 @@
 
 package org.apache.servicemix.examples.camel.rest;
 
-import org.apache.servicemix.examples.camel.rest.model.HelpRequest;
-import org.apache.servicemix.examples.camel.rest.model.Person;
+import org.apache.servicemix.examples.camel.rest.model.Order;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
@@ -26,10 +25,10 @@ import javax.ws.rs.core.Response;
 // This could be an interface if CAMEL-6014 is fixed.
 
 @Path("/servicemix/")
-public class PersonService {
+public class OrderService {
     @POST
-    @Path("/help-request")
-    public Response createHelpRequest(HelpRequest helpRequest) {
+    @Path("/order-request")
+    public Response createHelpRequest(Order order) {
         return null;
     }
 

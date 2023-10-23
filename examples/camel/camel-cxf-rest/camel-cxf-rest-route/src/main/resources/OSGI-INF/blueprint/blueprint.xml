@@ -34,15 +34,15 @@
         </cm:property-placeholder>
 
         <cxf:rsServer id="rsServer" address="${CXFserver}${service}"
-                      serviceClass="org.apache.servicemix.examples.camel.rest.PersonService"
+                      serviceClass="org.apache.servicemix.examples.camel.rest.OrderService"
                       loggingFeatureEnabled="true" loggingSizeLimit="20"/>
 
 
     <camelContext xmlns="http://camel.apache.org/schema/blueprint">
-        <route id="HelpRequestServiceRoute">
+        <route id="OrderRequestServiceRoute">
             <from uri="cxfrs:bean:rsServer?bindingStyle=SimpleConsumer"/>
-            <log message="helpRequest invocation with body: ${body}"/>
-            <wireTap uri="activemq:queue:helpRequestQueue"/>
+            <log message="OrderRequest invocation with body: ${body}"/>
+            <wireTap uri="activemq:queue:OrderRequestQueue"/>
         </route>
     </camelContext>
 </blueprint>
