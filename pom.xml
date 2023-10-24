@@ -147,7 +147,8 @@
     <modules>
         <module>camel-cxf-rest-route</module>
         <module>camel-cxf-rest-service</module>
-        <module>camel-cxf-rest-client</module>
+        <module>camel-sql-datasource-pgsql</module>
+        <module>camel-sql-orders</module>
         <module>feature</module>
     </modules>
 

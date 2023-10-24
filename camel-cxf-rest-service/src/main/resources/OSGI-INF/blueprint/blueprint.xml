@@ -10,8 +10,8 @@
 
     <camelContext xmlns="http://camel.apache.org/schema/blueprint" >
         <route>
-            <from uri="activemq:queue:helpRequestQueue" />
-            <log message="HelpRequestConsumerRoute invocation with body: ${body}"/>
+            <from uri="activemq:queue:OrderRequestQueue" />
+            <log message="OrderRequestConsumerRoute invocation with body: ${body}"/>
             <to uri="direct-vm:insertOrder"/>
         </route>
     </camelContext>

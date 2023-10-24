@@ -17,17 +17,17 @@
 
 package org.apache.servicemix.examples.camel.rest;
 
-import org.apache.servicemix.examples.camel.rest.model.HelpRequest;
+import org.apache.servicemix.examples.camel.rest.model.Order;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
 
 
 @Path("/servicemix/")
-public class PersonService {
+public class OrderService {
     @POST
-    @Path("/help-request")
-    public Response createHelpRequest(HelpRequest helpRequest) {
+    @Path("/order-request")
+    public Response createHelpRequest(Order order) {
         String output = "Message sent";
         return Response.status(201).entity(output).build();
     }
