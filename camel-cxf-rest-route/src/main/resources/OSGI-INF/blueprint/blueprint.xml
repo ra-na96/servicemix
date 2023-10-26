@@ -24,7 +24,7 @@
         <route id="OrderRequestServiceRoute">
             <from uri="cxfrs:bean:rsServer?bindingStyle=SimpleConsumer"/>
             <log message="OrderRequest invocation with body: ${body}"/>
-            <wireTap uri="activemq:queue:OrderRequestQueue"/>
+            <to uri="activemq:queue:OrderRequestQueue"/>
         </route>
     </camelContext>
 </blueprint>

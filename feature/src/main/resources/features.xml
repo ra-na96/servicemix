@@ -2,18 +2,23 @@
 
 <features name="camel-cxf-mq-feature-repo" xmlns="http://karaf.apache.org/xmlns/features/v1.4.0">
 
-    <feature name='moduleA' version='${project.version}'>
+    <feature name='camel-cxf-rest' version='${project.version}'>
         <bundle>mvn:org.apache.servicemix.examples/camel-cxf-rest-route/${project.version}</bundle>
-    </feature>
-
-    <feature name='moduleB' version='${project.version}'>
         <bundle>mvn:org.apache.servicemix.examples/camel-cxf-rest-service/${project.version}</bundle>
     </feature>
 
-    
+    <feature name="camel-sql-postgres" version='${project.version}'>
+        <feature version="${camel.version}">camel-sql</feature>
+        <bundle dependency="true">mvn:commons-dbcp/commons-dbcp/1.4</bundle>
+        <bundle dependency="true">wrap:mvn:postgresql/postgresql/9.1-901.jdbc4</bundle>
+        <bundle>mvn:org.apache.servicemix.examples/camel-sql-datasource-pgsql/${project.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.examples/camel-sql-orders/${project.version}</bundle>
+    </feature>
+
+
     <feature name='camel-cxf-mq-feature' version='${project.version}'>
-        <feature version='${project.version}'>moduleA</feature>
-        <feature version='${project.version}'>moduleB</feature>
+        <feature version='${project.version}'>camel-cxf-rest</feature>
+        <feature version='${project.version}'>camel-sql-postgres</feature>
     </feature>
 
 </features>

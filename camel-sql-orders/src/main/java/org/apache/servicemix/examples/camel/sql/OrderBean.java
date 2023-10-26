@@ -20,47 +20,10 @@ import java.util.*;
 
 public class OrderBean {
 
-    private Random random;
-    private static int itemnumber = 0;
-    private List<Map<String,Object>> orders;
-
-
-    public OrderBean() {
-        random = new Random();
-    }
-
-
-    public Map<String,Object> generateRandomOrder(){
-        return orders.get(random.nextInt(orders.size()-1));
-    }
-
-    private static int getNextItemNumber(){
-        return OrderBean.itemnumber++;
-    }
-
     public void processOrder(Map<String,Object> order){
         order.put("description",order.get("description")+" [PROCESSED]");
         order.put("processed",true);
 
     }
-
-
-    public void init(){
-        orders = new ArrayList<Map<String, Object>>();
-        orders.add(createOrder("Cookies","Grandma's recipe and fresh from the bakery!",random.nextInt(50)));
-        orders.add(createOrder("Lollipops","Mix of different colors and flavours",random.nextInt(10)));
-        orders.add(createOrder("Gummi bears","The red ones are the cutest",random.nextInt(100)));
-        orders.add(createOrder("Skittles","Everybody loves rainbows",random.nextInt(800)));
-    }
-
-    private Map<String,Object> createOrder(String item, String description, int amount){
-        Map<String,Object> order = new HashMap<String,Object>();
-        order.put("item",item);
-        order.put("description",description);
-        order.put("amount",amount);
-        return order;
-    }
-
-
 
 }

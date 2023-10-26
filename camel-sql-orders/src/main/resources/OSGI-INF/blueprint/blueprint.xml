@@ -4,7 +4,7 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd">
 
-    <bean id="orderBean" class="org.apache.servicemix.examples.camel.sql.OrderBean" init-method="init"/>
+    <bean id="orderBean" class="org.apache.servicemix.examples.camel.sql.OrderBean"/>
 
     <reference id="dataSource" interface="javax.sql.DataSource" filter="(datasource.name=orders)">
         <reference-listener bind-method="onBind" unbind-method="onUnbind">
