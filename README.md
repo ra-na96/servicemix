@@ -13,10 +13,11 @@
    
    To prepare the database server you can use the command line tool
        psql or the GUI tool PgAdmin (http://pgadmin.org/).
-    
+```    
        - Create a new database orderdb
        - Create new user with name and password as postgres
        - ALTER DATABASE orderdb OWNER TO postgres;
+```
 
 3. Install Project
 ```
